@@ -11,7 +11,7 @@ myprogram = print (1 + m)  -- compiler error: m undefined
 m = 1                      -- unless this line is also present
 
 -- sequencing several imperative programs:
-prg1 = do
+prg1 = do 
   print "hello " 
   print name  -- level of indentation is important
 
@@ -20,7 +20,7 @@ prg1' = sequence_ [print "hello ", print name]
 
 -- one imperative program passing value to another:
 prg2 = do
-  line <- getLine
+  line <- getLine -- creates vairable of th einput and puts it in line 
   putStrLn ("you typed: " ++ line)
 
 main =
@@ -32,7 +32,7 @@ main =
 
 
 -- generic string conversion, using a Java-friendly name:
-toString value = show value
+toString value = show (value) -- input(value )
 
 -- string concatenation:
 greet1 = "hello " ++ name ++ (toString 123)
