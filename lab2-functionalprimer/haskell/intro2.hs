@@ -20,9 +20,9 @@ prg1' = sequence_ [print "hello ", print name]
 
 -- one imperative program passing value to another:
 prg2 = do
-  line <- getLine -- creates vairable of th einput and puts it in line 
-  putStrLn ("you typed: " ++ line)
-
+  line <- getLine -- creates vairable of the input and puts it in line 
+  putStrLn ("you typed: this  " ++ line)
+--- getline is a IO action that reads from the input so predefiend command while line 
 main =
   do
   putStrLn name -- like print, but only for strings
@@ -32,7 +32,7 @@ main =
 
 
 -- generic string conversion, using a Java-friendly name:
-toString value = show (value) -- input(value )
+-- toString value = show (2) -- input(value )
 
 -- string concatenation:
 greet1 = "hello " ++ name ++ (toString 123)

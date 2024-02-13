@@ -87,6 +87,7 @@ public class Overflow
         {
             ns = ns * n;
 //             assert ?? : "Floating-point overflow";
+            assert ns < Float.MAX_VALUE: ("floating point overflow" + ns) ;
             resultList.add(ns);
         }
         return resultList;
@@ -112,8 +113,11 @@ public class Overflow
         for ( int j = 0; j <= m; j++ )
         {
             ns_inv = ns_inv / n; // update from 1/n^(i-1) to 1/n^i
-//             assert ?? : "Floating point underflow";
-            geom_sum = ns_inv + geom_sum;
+            //assert m <=0 : ("less than 0 ")   
+            // makes senser now essentially i have this number nsinv it repalces each time and i get a new number 
+//          assert ?? : "Floating point underflow";
+            assert ns_inv > Float.MIN_VALUE: "floating point underflow";
+            geom_sum = ns_inv + geom_sum;    
             resultList.add(geom_sum);
         }
         return resultList;
